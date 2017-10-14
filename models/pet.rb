@@ -2,8 +2,10 @@ require_relative "../db/sql_runner"
 
 class Pet
 
-  attr_accessor :name, :picture, :type, :breed, :gender, :adoptable, :trained
   attr_reader :id
+
+  attr_accessor :name, :picture, :type, :breed, :gender, :adoptable, :trained, :date_arrived
+
 
   def initialize(options)
     @id = options['id'] if options['id']
@@ -49,6 +51,13 @@ class Pet
     values = []
     pets = SqlRunner.run(sql, values)
     return pets.map { |pet| Pet.new(pet) }
+  end
+
+  def self.find(id)
+      sql = 'SELECT * FROM pets WHERE id = $1'
+      values = [id]
+      pet = SqlRunner.run(sql, values).first()
+      return Pet.new(pet)
   end
 
 end

@@ -10,8 +10,8 @@ CREATE TABLE pets (
   breed VARCHAR(255),
   gender VARCHAR(255),
   date_arrived DATE,
-  adoptable BOOLEAN,
-  trained BOOLEAN
+  adoptable VARCHAR(255),
+  trained VARCHAR(255)
 );
 
 CREATE TABLE owners (

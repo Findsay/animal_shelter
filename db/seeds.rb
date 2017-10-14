@@ -13,8 +13,8 @@ pet1 = Pet.new({
   'type' => "Dog",
   'breed' => "Golden Retriever",
   'date_arrived' => 'March 30 2017',
-  'adoptable' => true,
-  'trained' => true,
+  'adoptable' => "Yes",
+  'trained' => "No",
   'picture' =>"url"
   })
 
@@ -26,8 +26,8 @@ pet2 = Pet.new({
   'type' => "Dog",
   'breed' => "Corgi",
   'date_arrived' => 'June 25 2016',
-  'adoptable' => true,
-  'trained' => false,
+  'adoptable' => "No",
+  'trained' => "No",
   'picture' =>"url"
   })
 
