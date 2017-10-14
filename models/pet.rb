@@ -2,6 +2,8 @@ require_relative "../db/sql_runner"
 
 class Pet
 
+  attr_accessor :name, :picture, :type, :breed, :gender, :adoptable, :trained
+
   def initialize(options)
     @name = options['name']
     @picture = options['picture']
@@ -28,29 +30,23 @@ class Pet
       SqlRunner.run(sql, values)
   end
 
-  # def update()
-  #     sql = 'UPDATE students SET (first_name, last_name, house_id, age) VALUES ($1, $2, $3, $4) WHERE id = $5;'
-  #     values = [@first_name, @last_name, @house_id, @age, @id]
-  #     SqlRunner.run(sql, values)
-  # end
-  #
-  # def delete()
-  #     sql = 'DELETE FROM students WHERE id = $1;'
-  #     values = [@id]
-  #     SqlRunner.run(sql, values)
-  # end
-  #
-  # def self.all()
-  #     sql = 'SELECT * FROM students;'
-  #     values = []
-  #     students = SqlRunner.run(sql, values)
-  #     return students.map { |student| Student.new(student) }
-  # end
-  #
-  # def self.find(id)
-  #     sql = 'SELECT * FROM students WHERE id = $1'
-  #     values = [id]
-  #     student = SqlRunner.run(sql, values).first()
-  #     return Student.new(student)
-  # end
+  def update()
+      sql = 'UPDATE pets SET (name, picture, type, breed, gender, date_arrived, adoptable, trained) = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9;'
+      values = [@name, @picture, @type, @breed, @gender, @date_arrived, @adoptable, @trained, @id]
+      SqlRunner.run(sql, values)
+  end
+
+  def delete()
+      sql = 'DELETE FROM pets WHERE id = $1;'
+      values = [@id]
+      SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+      sql = 'SELECT * FROM pets;'
+      values = []
+      pets = SqlRunner.run(sql, values)
+      return pets.map { |pet| Pet.new(pet) }
+  end
+
 end

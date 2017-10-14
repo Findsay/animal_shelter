@@ -3,6 +3,7 @@ require_relative( '../models/pet')
 
 require 'pry-byebug'
 
+Pet.delete_all()
 
 pet1 = Pet.new({
   'name' => "Molly",
@@ -16,3 +17,27 @@ pet1 = Pet.new({
   })
 
 pet1.save()
+
+pet2 = Pet.new({
+  'name' => "Rolo",
+  'gender' => "Male",
+  'type' => "Dog",
+  'breed' => "Corgi",
+  'date_arrived' => 'June 25 2016',
+  'adoptable' => true,
+  'trained' => false,
+  'picture' =>"url"
+  })
+
+  pet2.save()
+
+
+
+# pet1.trained = false
+# pet1.update()
+#
+# pet1.delete()
+
+
+binding.pry
+nil
