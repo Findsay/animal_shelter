@@ -1,9 +1,11 @@
 require_relative( '../models/pet')
+require_relative( '../models/owner')
 
 
 require 'pry-byebug'
 
 Pet.delete_all()
+Owner.delete_all()
 
 pet1 = Pet.new({
   'name' => "Molly",
@@ -31,12 +33,13 @@ pet2 = Pet.new({
 
   pet2.save()
 
+owner1 = Owner.new({
+  'name' => "Gerald"
+  })
+
+owner1.save()
 
 
-# pet1.trained = false
-# pet1.update()
-#
-# pet1.delete()
 
 
 binding.pry

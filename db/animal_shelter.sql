@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS pets;
+DROP TABLE IF EXISTS owners;
 
 
 CREATE TABLE pets (
@@ -11,4 +12,9 @@ CREATE TABLE pets (
   date_arrived DATE,
   adoptable BOOLEAN,
   trained BOOLEAN
+);
+
+CREATE TABLE owners (
+  id SERIAL8 PRIMARY KEY,
+  name VARCHAR(255)
 );
