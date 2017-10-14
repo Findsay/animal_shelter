@@ -17,14 +17,14 @@ class Pet
     @date_arrived = options['date_arrived']
     @adoptable = options['adoptable']
     @trained = options['trained']
-    # @owner_id = options['owner_id']
+    @current_owner = options['current_owner'] if options['current_owner']
 
   end
 
 
   def save()
-    sql = "INSERT INTO pets (name, picture, type, breed, gender, date_arrived, adoptable, trained) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id;"
-    values = [@name, @picture, @type, @breed, @gender, @date_arrived, @adoptable, @trained]
+    sql = "INSERT INTO pets (name, picture, type, breed, gender, date_arrived, adoptable, trained, current_owner) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id;"
+    values = [@name, @picture, @type, @breed, @gender, @date_arrived, @adoptable, @trained, @current_owner]
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
@@ -35,8 +35,8 @@ class Pet
   end
 
   def update()
-    sql = 'UPDATE pets SET (name, picture, type, breed, gender, date_arrived, adoptable, trained) = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9;'
-    values = [@name, @picture, @type, @breed, @gender, @date_arrived, @adoptable, @trained, @id]
+    sql = 'UPDATE pets SET (name, picture, type, breed, gender, date_arrived, adoptable, trained, current_owner) = ($1, $2, $3, $4, $5, $6, $7, $8, $9) WHERE id = $10;'
+    values = [@name, @picture, @type, @breed, @gender, @date_arrived, @adoptable, @trained,@current_owner, @id]
     SqlRunner.run(sql, values)
   end
 

@@ -1,6 +1,12 @@
+DROP TABLE IF EXISTS pet_owners;
 DROP TABLE IF EXISTS pets;
 DROP TABLE IF EXISTS owners;
 
+
+CREATE TABLE owners (
+  id SERIAL8 PRIMARY KEY,
+  name VARCHAR(255)
+);
 
 CREATE TABLE pets (
   id SERIAL8 PRIMARY KEY,
@@ -11,10 +17,13 @@ CREATE TABLE pets (
   gender VARCHAR(255),
   date_arrived DATE,
   adoptable VARCHAR(255),
-  trained VARCHAR(255)
+  trained VARCHAR(255),
+  current_owner INT8 REFERENCES owners(id)
 );
 
-CREATE TABLE owners (
+
+CREATE TABLE pet_owners (
   id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255)
+  owner_id INT8 REFERENCES owners(id),
+  pet_id INT8 REFERENCES pets(id)
 );

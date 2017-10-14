@@ -22,14 +22,6 @@ class PetTest < MiniTest::Test
 
   end
 
-  def test_save_to_db()
-    @pet1.save()
-
-    actual = "Molly"
-    expected =
-
-
-  end
 
 
 
