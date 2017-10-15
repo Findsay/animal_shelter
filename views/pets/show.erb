@@ -6,4 +6,11 @@
 <p> Adoptable: <%= @pet.adoptable %> </p>
 <p> Trained: <%= @pet.trained %> </p>
 
+<% if @pet.adoptable == "Yes" %>
+  <hr>
+  <p> Owner: <%= @pet.owner_name %> </p>
+<% end %>
+
+<hr>
+
 <p><a href="/pets/<%=@pet.id%>/edit">Edit Details</a></p>

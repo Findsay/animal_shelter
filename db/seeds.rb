@@ -5,8 +5,34 @@ require_relative( '../models/pet_owner')
 
 require 'pry-byebug'
 
+PetOwner.delete_all()
 Pet.delete_all()
 Owner.delete_all()
+
+owner0 = Owner.new({
+    'name' => "None"
+})
+
+owner0.save()
+
+owner1 = Owner.new({
+    'name' => "Gerald"
+})
+
+owner1.save()
+
+owner2 = Owner.new({
+    'name' => "Helen"
+})
+
+owner2.save()
+
+owner3 = Owner.new({
+    'name' => "Jean"
+})
+
+owner3.save()
+
 
 pet1 = Pet.new({
   'name' => "Molly",
@@ -16,7 +42,9 @@ pet1 = Pet.new({
   'date_arrived' => 'March 30 2017',
   'adoptable' => "Yes",
   'trained' => "No",
-  'picture' =>"url"
+  'picture' =>"url",
+  'current_owner' => owner0.id
+
 })
 
 pet1.save()
@@ -29,7 +57,10 @@ pet2 = Pet.new({
     'date_arrived' => 'June 25 2016',
     'adoptable' => "No",
     'trained' => "No",
-    'picture' =>"url"
+    'picture' =>"url",
+    'current_owner' => owner0.id
+
+
 })
 
 pet2.save()
@@ -42,31 +73,31 @@ pet3 = Pet.new({
     'date_arrived' => 'May 25 2014',
     'adoptable' => "Yes",
     'trained' => "Yes",
-    'picture' =>"url"
+    'picture' =>"url",
+    'current_owner' => owner0.id
+
+
 })
 
 pet3.save()
 
-owner1 = Owner.new({
-    'name' => "Gerald"
-})
 
-owner1.save()
 
-petowner1 = PetOwner.new({
-    'owner_id' => owner1.id,
-    'pet_id' => pet1.id
-})
 
-petowner1.save()
 
-petowner2 = PetOwner.new({
-    'owner_id' => owner1.id,
-    'pet_id' => pet3.id
-})
-
-petowner2.save()
-
+# petowner1 = PetOwner.new({
+#     'owner_id' => owner1.id,
+#     'pet_id' => pet1.id
+# })
+#
+# petowner1.save()
+#
+# petowner2 = PetOwner.new({
+#     'owner_id' => owner1.id,
+#     'pet_id' => pet3.id
+# })
+#
+# petowner2.save()
 
 
 

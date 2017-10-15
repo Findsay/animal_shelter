@@ -1,10 +1,11 @@
 require_relative "../db/sql_runner"
+require_relative "owner"
 
 class Pet
 
   attr_reader :id
 
-  attr_accessor :name, :picture, :type, :breed, :gender, :adoptable, :trained, :date_arrived
+  attr_accessor :name, :picture, :type, :breed, :gender, :adoptable, :trained, :date_arrived, :current_owner
 
 
   def initialize(options)
@@ -58,6 +59,13 @@ class Pet
       values = [id]
       pet = SqlRunner.run(sql, values).first()
       return Pet.new(pet)
+  end
+
+  def owner_name()
+  sql = "SELECT * FROM owners WHERE id = $1"
+  values = [@current_owner]
+  owner = SqlRunner.run(sql, values).first()
+  return Owner.new(owner).name()
   end
 
 end
