@@ -6,6 +6,7 @@ class Owner
   attr_accessor :name
   attr_reader :id
 
+
   def initialize(options)
     @id = options['id'] if options['id']
     @name = options['name']
@@ -43,12 +44,11 @@ class Owner
     return owners.map { |owner| Owner.new(owner) }
   end
 
-  def self.find(id)
+  def pets
     sql = "SELECT * FROM pets WHERE current_owner = $1"
-    values[id]
-    pets = SqlRunner.run(sql, vaues)
+    values = [@id]
+    pets = SqlRunner.run(sql, values)
     return pets.map { |pet| Pet.new(pet)}
-
   end
 
 end

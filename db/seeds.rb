@@ -43,7 +43,7 @@ pet1 = Pet.new({
   'adoptable' => "Yes",
   'trained' => "No",
   'picture' =>"url",
-  'current_owner' => owner0.id
+  'current_owner' => owner2.id
 
 })
 
