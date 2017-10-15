@@ -9,6 +9,11 @@ get '/pets' do
   erb ( :"pets/index")
 end
 
+get '/pets/new' do
+  @owners = Owner.all()
+  erb( :"pets/new" )
+end
+
 get '/pets/:id' do
   @pet = Pet.find(params['id'])
   erb( :"pets/show" )
@@ -24,4 +29,10 @@ post '/pets/:id' do
   @pet = Pet.new(params)
   @pet.update()
   erb( :"pets/show" )
+end
+
+post '/pets' do
+  pet = Pet.new(params)
+  pet.save
+  redirect to("/pets")
 end

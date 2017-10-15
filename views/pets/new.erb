@@ -1,0 +1,48 @@
+<h1>Add new pet</h1>
+
+
+<form action="/pets" method="POST">
+  <label for="petName">Name:</label>
+  <input type="text" name ="name" id ="petName"/>
+
+  <label for="petType">Type:</label>
+  <select name="type" id="petType">
+    <option value="Cat" >Cat</option>
+    <option value="Dog" >Dog</option>
+    <option value="Rabbit" >Rabbit</option>
+  </select>
+
+  <label for="petBreed">Breed:</label>
+  <input type="text" name ="breed" id= "petBreed"/>
+
+  <label for="petSex">Sex:</label>
+  <select name="gender" id="petGender">
+    <option value="Male" >Male</option>
+    <option value="Female" >Female</option>
+  </select>
+
+  <label for="petBreed">Breed:</label>
+  <input type="date" name ="date_arrived" id= "petDate"/>
+
+  <label for="petAdopatble">Adoptable:</label>
+  <select name="adoptable" id="petAdoptable">
+    <option value="Yes" >Yes</option>
+    <option value="No" >No</option>
+  </select>
+
+  <label for="petTrained">Trained:</label>
+  <select name="trained" id="petTrained">
+    <option value="Yes" >Yes</option>
+    <option value="No" >No</option>
+  </select>
+
+
+  <label for="petOwners">Owner:</label>
+  <select name="current_owner" id="petOwners">
+    <% @owners.each do |aowner| %>
+    <option value="<%=aowner.id()%>" ><%=aowner.name()%></option>
+    <%end%>
+  </select>
+
+
+  <input type="submit" value="Add"/>

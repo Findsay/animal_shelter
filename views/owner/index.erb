@@ -9,7 +9,7 @@
   <h3> Pets Owned </h3>
   <ol>
   <% pet_array.each do |pet| %>
-  <li><%= pet.name %> <%=- pet.breed %> </li>
+  <li><a href="/pets/<%=pet.id%>"><%= pet.name %> <%=- pet.breed %></a></li>
   <% end %>
   </ol>
   <% end %>

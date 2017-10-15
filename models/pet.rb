@@ -65,6 +65,7 @@ class Pet
   sql = "SELECT * FROM owners WHERE id = $1"
   values = [@current_owner]
   owner = SqlRunner.run(sql, values).first()
+  
   return Owner.new(owner).name()
   end
 
