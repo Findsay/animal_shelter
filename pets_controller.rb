@@ -36,3 +36,9 @@ post '/pets' do
   pet.save
   redirect to("/pets")
 end
+
+post '/pets/:id/delete' do
+  @pet = Pet.find(params['id'])
+  @pet.delete()
+  redirect to("/pets")
+end

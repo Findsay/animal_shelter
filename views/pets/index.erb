@@ -7,7 +7,10 @@
 <p> Sex: <%= pet.gender %> </p>
 <p> Adoptable: <%= pet.adoptable %> </p>
 <p> Admission Date: <%= pet.date_arrived %> </p>
-<p><a href="/pets/<%=pet.id%>">View</a></p>
+<a href="/pets/<%=pet.id%>">View</a>
+<form action="/pets/<%= pet.id %>/delete" method="POST">
+  <input type="submit" value="Delete" />
+</form>
 <hr>
 
 <% end %>
