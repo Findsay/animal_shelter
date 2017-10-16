@@ -47,6 +47,13 @@ class PetOwner
     return pet_owners.map { |pet_owner| PetOwner.new(pet_owner) }
   end
 
+  def self.find(id)
+      sql = 'SELECT * FROM pet_owners WHERE id = $1'
+      values = [id]
+      petowner = SqlRunner.run(sql, values).first()
+      return PetOwner.new(petowner)
+  end
+
   def pet()
     sql = "SELECT * FROM pets WHERE id = $1"
     values = [@pet_id]

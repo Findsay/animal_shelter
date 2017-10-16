@@ -21,3 +21,9 @@ post '/pet_owners' do
   petowner.save
   redirect to("/pet_owners")
 end
+
+post '/pet_owners/:id/delete' do
+  @petowner = PetOwner.find(params['id'])
+  @petowner.delete()
+  redirect to("/pet_owners")
+end

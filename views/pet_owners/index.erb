@@ -7,6 +7,9 @@
 <% pets = petowner.pet%>
 <% pets.each do |pet| %>
 <li><a href="/pets/<%=pet.id%>"><%= pet.name %> <%=- pet.breed %></a></li>
+<form action="/pet_owners/<%= petowner.id %>/delete" method="POST">
+  <input type="submit" value="Delete" />
+</form>
 <% end %>
 </ol>
 
