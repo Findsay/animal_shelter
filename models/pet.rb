@@ -5,7 +5,7 @@ class Pet
 
   attr_reader :id
 
-  attr_accessor :name, :picture, :type, :breed, :gender, :adoptable, :trained, :date_arrived, :current_owner
+  attr_accessor :name, :picture, :type, :breed, :gender, :adoptable, :trained, :date_arrived
 
 
   def initialize(options)
@@ -18,14 +18,13 @@ class Pet
     @date_arrived = options['date_arrived']
     @adoptable = options['adoptable']
     @trained = options['trained']
-    @current_owner = options['current_owner'] if options['current_owner']
 
   end
 
 
   def save()
-    sql = "INSERT INTO pets (name, picture, type, breed, gender, date_arrived, adoptable, trained, current_owner) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id;"
-    values = [@name, @picture, @type, @breed, @gender, @date_arrived, @adoptable, @trained, @current_owner]
+    sql = "INSERT INTO pets (name, picture, type, breed, gender, date_arrived, adoptable, trained) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id;"
+    values = [@name, @picture, @type, @breed, @gender, @date_arrived, @adoptable, @trained]
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
@@ -36,8 +35,8 @@ class Pet
   end
 
   def update()
-    sql = 'UPDATE pets SET (name, picture, type, breed, gender, date_arrived, adoptable, trained, current_owner) = ($1, $2, $3, $4, $5, $6, $7, $8, $9) WHERE id = $10;'
-    values = [@name, @picture, @type, @breed, @gender, @date_arrived, @adoptable, @trained,@current_owner, @id]
+    sql = 'UPDATE pets SET (name, picture, type, breed, gender, date_arrived, adoptable, trained) = ($1, $2, $3, $4, $5, $6, $7, $8) WHERE id = $9;'
+    values = [@name, @picture, @type, @breed, @gender, @date_arrived, @adoptable, @trained, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -61,12 +60,12 @@ class Pet
       return Pet.new(pet)
   end
 
-  def owner_name()
-  sql = "SELECT * FROM owners WHERE id = $1"
-  values = [@current_owner]
-  owner = SqlRunner.run(sql, values).first()
-  
-  return Owner.new(owner).name()
-  end
+  # def owner_name()
+  # sql = "SELECT * FROM owners WHERE id = $1"
+  # values = [@current_owner]
+  # owner = SqlRunner.run(sql, values).first()
+  #
+  # return Owner.new(owner).name()
+  # end
 
 end

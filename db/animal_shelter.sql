@@ -17,8 +17,7 @@ CREATE TABLE pets (
   gender VARCHAR(255),
   date_arrived DATE,
   adoptable VARCHAR(255),
-  trained VARCHAR(255),
-  current_owner INT8 REFERENCES owners(id)
+  trained VARCHAR(255)
 );
 
 

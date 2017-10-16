@@ -39,22 +39,6 @@
     <%end%>
   </select>
 
-<% if @pet.adoptable == "Yes" %>
-  <label for="petOwners">Owner:</label>
-  <select name="current_owner" id="petOwners">
-    <% @owners.each do |aowner| %>
-    <% if @pet.owner_name == aowner.name %>
-      <option value="<%=aowner.id()%>" selected ><%=aowner.name()%></option>
-    <% else %>
-      <option value="<%=aowner.id()%>" ><%=aowner.name()%></option>
-    <% end %>
-    <% end %>
-  </select>
-<% else %>
-<input type="hidden" name ="current_owner" value= "<%= @pet.current_owner %>" />
-<% end %>
-
-
 
   <input type="hidden" name ="date_arrived" value= "<%= @pet.date_arrived %>"/>
 

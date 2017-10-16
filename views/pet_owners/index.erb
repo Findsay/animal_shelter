@@ -1,1 +1,15 @@
+<h1>Owners and their pets</h1>
 
+<% @petowners.each do |petowner| %>
+<h2><%= petowner.owner.name %></h2>
+<h3>Pets Owned</h3>
+<ol>
+<% pets = petowner.pet%>
+<% pets.each do |pet| %>
+<li><a href="/pets/<%=pet.id%>"><%= pet.name %> <%=- pet.breed %></a></li>
+<% end %>
+</ol>
+
+
+
+<% end %>

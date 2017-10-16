@@ -1,4 +1,6 @@
 require_relative "../db/sql_runner"
+require_relative "pet"
+require_relative "owner"
 
 class PetOwner
 
@@ -43,6 +45,20 @@ class PetOwner
     values = []
     pet_owners = SqlRunner.run(sql, values)
     return pet_owners.map { |pet_owner| PetOwner.new(pet_owner) }
+  end
+
+  def pet()
+    sql = "SELECT * FROM pets WHERE id = $1"
+    values = [@pet_id]
+    pets = SqlRunner.run(sql, values)
+    return pets.map { |pet| Pet.new(pet)}
+  end
+
+  def owner()
+    sql = "SELECT * FROM owners WHERE id = $1"
+    values = [@owner_id]
+    owner = SqlRunner.run(sql,values).first
+    return Owner.new(owner)
   end
 
 end

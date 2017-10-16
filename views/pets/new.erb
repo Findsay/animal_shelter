@@ -37,12 +37,4 @@
   </select>
 
 
-  <label for="petOwners">Owner:</label>
-  <select name="current_owner" id="petOwners">
-    <% @owners.each do |aowner| %>
-    <option value="<%=aowner.id()%>" ><%=aowner.name()%></option>
-    <%end%>
-  </select>
-
-
   <input type="submit" value="Add"/>

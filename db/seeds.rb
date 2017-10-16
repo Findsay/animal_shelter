@@ -9,12 +9,6 @@ PetOwner.delete_all()
 Pet.delete_all()
 Owner.delete_all()
 
-owner0 = Owner.new({
-    'name' => "None"
-})
-
-owner0.save()
-
 owner1 = Owner.new({
     'name' => "Gerald"
 })
@@ -42,8 +36,7 @@ pet1 = Pet.new({
   'date_arrived' => 'March 30 2017',
   'adoptable' => "Yes",
   'trained' => "No",
-  'picture' =>"url",
-  'current_owner' => owner2.id
+  'picture' =>"url"
 
 })
 
@@ -57,8 +50,7 @@ pet2 = Pet.new({
     'date_arrived' => 'June 25 2016',
     'adoptable' => "No",
     'trained' => "No",
-    'picture' =>"url",
-    'current_owner' => owner0.id
+    'picture' =>"url"
 
 
 })
@@ -73,8 +65,7 @@ pet3 = Pet.new({
     'date_arrived' => 'May 25 2014',
     'adoptable' => "Yes",
     'trained' => "Yes",
-    'picture' =>"url",
-    'current_owner' => owner0.id
+    'picture' =>"url"
 
 
 })
@@ -85,12 +76,12 @@ pet3.save()
 
 
 
-# petowner1 = PetOwner.new({
-#     'owner_id' => owner1.id,
-#     'pet_id' => pet1.id
-# })
-#
-# petowner1.save()
+petowner1 = PetOwner.new({
+    'owner_id' => owner1.id,
+    'pet_id' => pet1.id
+})
+
+petowner1.save()
 #
 # petowner2 = PetOwner.new({
 #     'owner_id' => owner1.id,
