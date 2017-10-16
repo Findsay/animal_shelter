@@ -36,7 +36,7 @@ pet1 = Pet.new({
   'date_arrived' => 'March 30 2017',
   'adoptable' => "Yes",
   'trained' => "No",
-  'picture' =>"url"
+  'picture' =>"images/buddy.jpg"
 
 })
 
@@ -50,7 +50,7 @@ pet2 = Pet.new({
     'date_arrived' => 'June 25 2016',
     'adoptable' => "No",
     'trained' => "No",
-    'picture' =>"url"
+    'picture' =>"images/rolo.jpg"
 
 
 })
@@ -65,15 +65,164 @@ pet3 = Pet.new({
     'date_arrived' => 'May 25 2014',
     'adoptable' => "Yes",
     'trained' => "Yes",
-    'picture' =>"url"
-
-
+    'picture' =>"images/jinx.jpg"
 })
 
 pet3.save()
 
+pet4 = Pet.new({
+    'name' => "Cooper",
+    'gender' => "Male",
+    'type' => "Dog",
+    'breed' => "German Shepherd",
+    'date_arrived' => 'July 25 2015',
+    'adoptable' => "Yes",
+    'trained' => "Yes",
+    'picture' =>"images/cooper.jpg"
+})
 
+pet4.save()
 
+pet5 = Pet.new({
+    'name' => "George",
+    'gender' => "Male",
+    'type' => "Rabbit",
+    'breed' => "American Sable",
+    'date_arrived' => 'August 18 2017',
+    'adoptable' => "Yes",
+    'trained' => "Yes",
+    'picture' =>"images/george.jpg"
+})
+
+pet5.save()
+
+pet6 = Pet.new({
+    'name' => "Leo",
+    'gender' => "Male",
+    'type' => "Dog",
+    'breed' => "Chow Chow",
+    'date_arrived' => 'March 09 2016',
+    'adoptable' => "Yes",
+    'trained' => "Yes",
+    'picture' =>"images/leo.jpg"
+})
+
+pet6.save()
+
+pet7 = Pet.new({
+    'name' => "Mr Cat",
+    'gender' => "Male",
+    'type' => "Cat",
+    'breed' => "Tabby",
+    'date_arrived' => '11 October 2016',
+    'adoptable' => "Yes",
+    'trained' => "No",
+    'picture' =>"images/mr_cat.jpg"
+})
+
+pet7.save()
+
+pet8 = Pet.new({
+    'name' => "Peterina",
+    'gender' => "Female",
+    'type' => "Rabbit",
+    'breed' => "Long Hair",
+    'date_arrived' => '16 December 2016',
+    'adoptable' => "Yes",
+    'trained' => "No",
+    'picture' =>"images/peter.jpg"
+})
+
+pet8.save()
+
+pet9 = Pet.new({
+    'name' => "Sasha",
+    'gender' => "Female",
+    'type' => "Dog",
+    'breed' => "Husky",
+    'date_arrived' => 'April 15 2017',
+    'adoptable' => "Yes",
+    'trained' => "No",
+    'picture' =>"images/sasha.jpg"
+})
+
+pet9.save()
+
+pet10 = Pet.new({
+    'name' => "Spot",
+    'gender' => "Female",
+    'type' => "Rabbit",
+    'breed' => "Spotty",
+    'date_arrived' => 'March 23 2017',
+    'adoptable' => "Yes",
+    'trained' => "No",
+    'picture' =>"images/spot.jpg"
+})
+
+pet10.save()
+
+pet11 = Pet.new({
+    'name' => "Rugcat",
+    'gender' => "Female",
+    'type' => "Cat",
+    'breed' => "Mixed",
+    'date_arrived' => 'September 21 2017',
+    'adoptable' => "Yes",
+    'trained' => "Yes",
+    'picture' =>"images/tess.jpg"
+})
+
+pet11.save()
+
+pet12 = Pet.new({
+    'name' => "Wellington",
+    'gender' => "Male",
+    'type' => "Dog",
+    'breed' => "English Sheepdog",
+    'date_arrived' => 'February 06 2017',
+    'adoptable' => "Yes",
+    'trained' => "Yes",
+    'picture' =>"images/wellington.jpg"
+})
+
+pet12.save()
+
+pet13 = Pet.new({
+    'name' => "Luther",
+    'gender' => "Male",
+    'type' => "Dog",
+    'breed' => "Labrador",
+    'date_arrived' => 'July 23 2016',
+    'adoptable' => "Yes",
+    'trained' => "Yes",
+    'picture' =>"images/luther.jpg"
+})
+
+pet13.save()
+
+pet14 = Pet.new({
+    'name' => "Fred",
+    'gender' => "Male",
+    'type' => "Dog",
+    'breed' => "Bulldog",
+    'date_arrived' => 'November 18 2016',
+    'adoptable' => "Yes",
+    'trained' => "Yes",
+    'picture' =>"images/fred.jpg"
+})
+pet14.save()
+
+pet15 = Pet.new({
+    'name' => "Alfie",
+    'gender' => "Male",
+    'type' => "Dog",
+    'breed' => "Jack Russell",
+    'date_arrived' => 'October 10 2017',
+    'adoptable' => "Yes",
+    'trained' => "No",
+    'picture' =>"images/alfie.jpg"
+})
+pet15.save()
 
 
 petowner1 = PetOwner.new({

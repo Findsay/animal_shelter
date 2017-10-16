@@ -1,41 +1,58 @@
-<h1>Add new pet</h1>
+
+<div class="divnewform">
+  <h1>Add new pet</h1>
 
 
-<form action="/pets" method="POST">
-  <label for="petName">Name:</label>
-  <input type="text" name ="name" id ="petName"/>
+  <form class="newpetform" action="/pets" method="POST">
+    <div class="formcontent">
+      <label for="petName">Name:</label>
+      <input type="text" name ="name" id ="petName"/>
+    </div>
 
-  <label for="petType">Type:</label>
-  <select name="type" id="petType">
-    <option value="Cat" >Cat</option>
-    <option value="Dog" >Dog</option>
-    <option value="Rabbit" >Rabbit</option>
-  </select>
+    <div class="formcontent">
+      <label for="petType">Type:</label>
+      <select name="type" id="petType">
+        <option value="Cat" >Cat</option>
+        <option value="Dog" >Dog</option>
+        <option value="Rabbit" >Rabbit</option>
+      </select>
+    </div>
 
-  <label for="petBreed">Breed:</label>
-  <input type="text" name ="breed" id= "petBreed"/>
-
-  <label for="petSex">Sex:</label>
-  <select name="gender" id="petGender">
-    <option value="Male" >Male</option>
-    <option value="Female" >Female</option>
-  </select>
-
-  <label for="petBreed">Breed:</label>
-  <input type="date" name ="date_arrived" id= "petDate"/>
-
-  <label for="petAdopatble">Adoptable:</label>
-  <select name="adoptable" id="petAdoptable">
-    <option value="Yes" >Yes</option>
-    <option value="No" >No</option>
-  </select>
-
-  <label for="petTrained">Trained:</label>
-  <select name="trained" id="petTrained">
-    <option value="Yes" >Yes</option>
-    <option value="No" >No</option>
-  </select>
+    <div class="formcontent">
+      <label for="petBreed">Breed:</label>
+      <input type="text" name ="breed" id= "petBreed"/>
+    </div>
 
 
-  <input type="submit" value="Add"/>
-</form>
+    <div class="formcontent">
+      <label for="petSex">Sex:</label>
+      <select name="gender" id="petGender">
+        <option value="Male" >Male</option>
+        <option value="Female" >Female</option>
+      </select>
+    </div>
+
+    <div class="formcontent">
+    <label for="petBreed">Date:</label>
+    <input type="date" name ="date_arrived" id= "petDate"/>
+    </div>
+
+    <div class="formcontent">
+    <label for="petAdopatble">Adoptable:</label>
+    <select name="adoptable" id="petAdoptable">
+      <option value="Yes" >Yes</option>
+      <option value="No" >No</option>
+    </select>
+    </div>
+
+    <div class="formcontent">
+    <label for="petTrained">Trained:</label>
+    <select name="trained" id="petTrained">
+      <option value="Yes" >Yes</option>
+      <option value="No" >No</option>
+    </select>
+    </div>
+
+    <input class="newpetsubmit" type="submit" value="Add"/>
+  </form>
+</div>

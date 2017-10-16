@@ -1,0 +1,200 @@
+.heading {
+  display: flex;
+  flex-direction: row;
+  background-color: #0A2239;
+  justify-content: space-between;
+  margin: 0
+}
+
+.heading img {
+  justify-content: flex-end;
+  padding: 15px;
+}
+
+.heading h2 {
+  color: white;
+  padding-left: 10px;
+  font-family: "Arial Rounded MT Bold";
+}
+
+nav {
+  background-color: #1D84B5;
+  margin: 0;
+}
+
+nav ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+nav li {
+  font-size: 16px;
+  font-family: "Arial Rounded MT Bold";
+  padding: 10px;
+}
+
+nav li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav li:hover {
+  background-color: #176087;
+}
+
+nav li a:active {
+  color: #176087;
+}
+
+body{
+  margin: 0
+}
+
+.Filter {
+  display:flex;
+
+}
+
+.Filter a{
+  font-size: 16px;
+  font-family: "Arial Rounded MT Bold";
+  padding: 15px;
+  text-decoration: none;
+  justify-content: center;
+  color: lightgrey;
+}
+
+a.active{
+  color: #132E32;
+  font-weight: bolder;
+
+}
+
+
+.allpets {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 10px;
+  width: 90%;
+}
+
+.petdisplay {
+  flex: 1 0 10;
+  padding-bottom: 15px;
+
+}
+
+.petdisplay img {
+  width: 200px;
+  height:125px;
+  padding-left: 15px;
+  padding-right:15px;
+}
+
+.petdisplay p {
+  margin: 0;
+}
+
+.petname a {
+  font-family: "Arial Rounded MT Bold";
+  color: #1D84B5;
+  margin:0;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+p.petname {
+  display:flex;
+  padding-left: 18px;
+  padding-right:18px;
+  font-family: "Arial Rounded MT Bold";
+  color: grey;
+  font-size: 12px;
+  justify-content: space-between;
+
+}
+
+p.viewpet {
+  display:block;
+  text-align: center;
+  background-color: #53A2BE;
+  margin-left: 15px;
+  margin-right:15px;
+}
+
+.viewpet a {
+  color: white;
+  text-decoration: none;
+  font-family: "Arial Rounded MT Bold";
+  margin: 0;
+}
+
+.divnewform {
+margin: auto;
+width:50%;
+justify-content: center;
+border: 2px solid #176087;
+margin-top: 10px;
+}
+
+.divnewform h1 {
+  background-color: #176087;
+  color: white;
+  font-family: "Arial Rounded MT Bold";
+  text-align: center;
+  padding:5px;
+  margin: 0;
+}
+
+.newpetform{
+  display: flex;
+  flex-direction: column;
+}
+
+.formcontent {
+  padding: 10px;
+  -moz-box-sizing:border-box;
+-webkit-box-sizing:border-box;
+box-sizing:border-box;
+display: flex;
+justify-content: space-between;
+padding-right: 30px;
+padding-left: 30px;
+}
+
+.newpetform select {
+  border: 1px solid #ccc;
+width: 130px;
+border-radius: 0px;
+overflow: hidden;
+background-color: white;
+}
+
+
+label {
+  font-family: "Arial Rounded MT Bold";
+  color: grey;
+  font-size: 14px;
+
+}
+
+input.newpetform  {
+  width: 150px;
+}
+
+input.newpetsubmit {
+  background-color: #DA1C5C;
+  margin: 1px;
+  border-radius: 0;
+  border: 0;
+  font-family: "Arial Rounded MT Bold";
+  color: white;
+  font-size: 14px;
+  padding: 5px;
+}

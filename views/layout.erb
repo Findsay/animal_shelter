@@ -5,17 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Animal Shelter</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+  <div class="heading">
+    <h2>Animal Shelter MIS </h2>
+    <img src="/images/paw.png" alt="the animal shelter logo">
+  </div>
+
   <nav>
+  <ul>
   <li><a href="/">Home</a></li>
   <li><a href="/pets">Pets</a></li>
   <li><a href="/pets/new">Add New Pet</a></li>
   <li><a href="/pet_owners">Pet Owners</a></li>
-    <li><a href="/owners">All Potential Owners</a></li>
+  <li><a href="/owners">All Potential Owners</a></li>
   <li><a href="/owners/new">Add New Owner</a></li>
-
-
+  </ul>
 </nav>
 
   <%= yield %>
