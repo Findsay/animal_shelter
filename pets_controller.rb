@@ -3,6 +3,7 @@ require( 'sinatra/contrib/all' )
 
 require_relative('./models/pet')
 require_relative('./models/owner')
+require_relative('pets_owner_controller')
 
 get '/pets' do
   @pets = Pet.all()

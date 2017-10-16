@@ -14,6 +14,8 @@
 <p> Admission Date: <%= pet.date_arrived %> </p>
 <a href="/pets/<%=pet.id%>">View</a>
 
+<a href="/pet_owners/<%=pet.id%>/assign">Assign Owner</a>
+
 <form action="/pets/<%= pet.id %>/delete" method="POST">
   <input type="submit" value="Delete" />
 </form>

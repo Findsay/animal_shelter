@@ -9,3 +9,15 @@ get '/pet_owners' do
   @petowners = PetOwner.all()
   erb ( :"pet_owners/index")
 end
+
+get '/pet_owners/:id/assign' do
+  @pet = Pet.find(params['id'])
+  @owners = Owner.all()
+  erb ( :"pet_owners/assign")
+end
+
+post '/pet_owners' do
+  petowner = PetOwner.new(params)
+  petowner.save
+  redirect to("/pet_owners")
+end
