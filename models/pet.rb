@@ -60,12 +60,12 @@ class Pet
       return Pet.new(pet)
   end
 
-  # def owner_name()
-  # sql = "SELECT * FROM owners WHERE id = $1"
-  # values = [@current_owner]
-  # owner = SqlRunner.run(sql, values).first()
-  #
-  # return Owner.new(owner).name()
-  # end
+  def self.trained(trained)
+    sql = 'SELECT * FROM pets WHERE trained = $1'
+    values = [trained]
+    pets = SqlRunner.run(sql, values)
+    return pets.map { |pet| Pet.new(pet)}
+  end
+
 
 end

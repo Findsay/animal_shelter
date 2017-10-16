@@ -15,6 +15,16 @@ get '/pets/new' do
   erb( :"pets/new" )
 end
 
+get '/pets/trained' do
+  @pets = Pet.trained("Yes")
+  erb (:"pets/trained")
+end
+
+get '/pets/untrained' do
+  @pets = Pet.trained("No")
+  erb (:"pets/untrained")
+end
+
 get '/pets/:id' do
   @pet = Pet.find(params['id'])
   erb( :"pets/show" )
