@@ -54,10 +54,10 @@ class Pet
   end
 
   def self.find(id)
-      sql = 'SELECT * FROM pets WHERE id = $1'
-      values = [id]
-      pet = SqlRunner.run(sql, values).first()
-      return Pet.new(pet)
+    sql = 'SELECT * FROM pets WHERE id = $1'
+    values = [id]
+    pet = SqlRunner.run(sql, values).first()
+    return Pet.new(pet)
   end
 
   def self.trained(trained)
@@ -65,6 +65,17 @@ class Pet
     values = [trained]
     pets = SqlRunner.run(sql, values)
     return pets.map { |pet| Pet.new(pet)}
+  end
+
+  def owner()
+    sql = "SELECT * FROM pet_owners WHERE pet_id = $1"
+    values = [@id]
+    petowner = SqlRunner.run(sql,values)
+    if petowner.any?
+      return PetOwner.new(petowner.first()).owner.name
+    else
+      return "No Owner"
+    end
   end
 
 
