@@ -94,8 +94,18 @@ class Pet
       else
         return "Sorry there are no pets of that type or breed"
       end
-    
+
     end
 
   end
+
+  def self.count_all()
+    sql = "SELECT COUNT (id) FROM pets;"
+    values =[]
+    return SqlRunner.run(sql, values)[0]['count']
+  end
+
+
+
+
 end
