@@ -100,8 +100,14 @@ class Pet
   end
 
   def self.count_all()
-    sql = "SELECT COUNT (id) FROM pets;"
+    sql = "SELECT COUNT (*) FROM pets;"
     values =[]
+    return SqlRunner.run(sql, values)[0]['count']
+  end
+
+  def self.count_type(type)
+    sql = "SELECT COUNT(*) FROM pets WHERE type= $1;"
+    values =[type]
     return SqlRunner.run(sql, values)[0]['count']
   end
 
