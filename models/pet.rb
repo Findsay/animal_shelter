@@ -72,7 +72,8 @@ class Pet
     values = [@id]
     petowner = SqlRunner.run(sql,values)
     if petowner.any?
-      return PetOwner.new(petowner.first()).owner.name
+      result = PetOwner.new(petowner.first())
+      return Owner.find(result.owner_id).name
     else
       return "No Owner"
     end

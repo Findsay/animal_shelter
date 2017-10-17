@@ -54,19 +54,19 @@ class PetOwner
     return PetOwner.new(petowner)
   end
 
-  def self.find_pet(pet_id)
-    sql = "SELECT * FROM pets WHERE id = $1;"
-    values = [pet_id]
-    pet = SqlRunner.run(sql, values)
-    return Pet.new(pet)
-  end
-
-  def self.find_owner(owner_id)
-    sql = "SELECT * FROM owners WHERE id = $1;"
-    values = [owner_id]
-    owner = SqlRunner.run(sql,values).first
-    return Owner.new(owner)
-  end
+  # def self.find_pets_(pet_id)
+  #   sql = "SELECT * FROM pet_owners WHERE pet_id = $1;"
+  #   values = [pet_id]
+  #   pet = SqlRunner.run(sql, values)
+  #   return Pet.new(pet)
+  # end
+  #
+  # def self.find_owner(owner_id)
+  #   sql = "SELECT * FROM owners WHERE owner_id = $1;"
+  #   values = [owner_id]
+  #   owner = SqlRunner.run(sql,values).first
+  #   return Owner.new(owner)
+  # end
 
 
 end

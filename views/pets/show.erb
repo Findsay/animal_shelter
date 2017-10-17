@@ -1,7 +1,10 @@
+<div class="headingdiv">
 <h1 class="showpetheading"><%= @pet.name %></h1>
-<form class="deletepet" action="/pets/<%=@pet.id %>/delete" method="POST">
-  <input type="submit" value="Delete" />
+<form class="deletepetform" action="/pets/<%=@pet.id %>/delete" method="POST">
+  <input class="deletepet" type="submit" value="Delete" />
 </form>
+</div>
+
 
 <div class="showpetcontainer">
 

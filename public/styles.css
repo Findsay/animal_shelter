@@ -134,15 +134,25 @@ p.viewpet {
   margin: 0;
 }
 
+.headingdiv{
+  width: 52%;
+  display: flex;
+  justify-content:space-between;
+  align-items: baseline;
+}
+
+.headingdiv h1 {
+  padding-left: 6%;
+}
+
 .showpetcontainer{
-  padding: 10px;
+  padding-right: 10px;
   font-family: "Arial Rounded MT Bold";
   color: #176087;
 }
 
 .showpetheading{
   padding: 10px;
-  padding-left: 20px;
   font-family: "Arial Rounded MT Bold";
   margin: 0;
   color: #1D84B5;
@@ -151,12 +161,13 @@ p.viewpet {
 
 .showpetcontainer img {
   float: left;
-
   width: 50%;
   margin: auto;
+  padding-right: 5%;
+  padding-left: 3%;
 }
-.showpetdetails  {
-  padding: 10px;
+.showpetdetails p  {
+  padding: 8px;
   display: flex;
 
 }
@@ -183,7 +194,7 @@ p.viewpet {
   display: inline-block;
   text-decoration: none;
   font-family: "Arial Rounded MT Bold";
-  margin: 0;
+  margin: 0px;
   width:150px;
   padding:10px;
   color: white;
@@ -191,8 +202,19 @@ p.viewpet {
   text-align: center;
 }
 
-.deletepet {
+.deletepetform {
   display: inline;
+}
+.deletepet {
+  background-color: lightgrey;
+  margin:0px;
+  border-radius: 0;
+  border: 0;
+  font-family: "Arial Rounded MT Bold";
+  color: white;
+  font-size: 12px;
+  padding: 8px;
+  width:60px;
 
 }
 

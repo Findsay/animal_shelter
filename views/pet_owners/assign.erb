@@ -1,15 +1,25 @@
-<h1>Assign <%= @pet.name %> a new home </h1>
+<div class="divnewform">
+  <h1>Assign A New Home </h1>
 
-<form action="/pet_owners" method="POST">
-<label for="ownerNames">Select New Owner</label>
-<select name="owner_id">
-<% @owners.each do |owner| %>
-<option value="<%=owner.id%>"><%=owner.name%></option>
-<%end%>
-</select>
+  <form class="petform" action="/pet_owners" method="POST">
 
-<input type="hidden" name ="pet_id" value= "<%= @pet.id %>"/>
+    <div class="formcontent">
+      <label for="ownerNames">Pet</label>
+      <input disabled="disabled" name ="pet_id" value= "<%= @pet.name %>"/>
+    </div>
 
-<input type="submit" value="Assign"/>
+    <div class="formcontent">
+      <label for="ownerNames">Select New Owner</label>
+      <select name="owner_id">
+        <% @owners.each do |owner| %>
+        <option value="<%=owner.id%>"><%=owner.name%></option>
+        <%end%>
+      </select>
+    </div>
 
-</form>
+    <input type="hidden" name ="pet_id" value= "<%= @pet.id %>"/>
+
+    <input class="submit" type="submit" value="Assign"/>
+
+  </form>
+</div>
