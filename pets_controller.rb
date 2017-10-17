@@ -25,6 +25,11 @@ get '/pets/untrained' do
   erb (:"pets/untrained")
 end
 
+get '/pets/search' do
+  @results = Pet.search(params['input'])
+  erb (:"pets/search")
+end
+
 get '/pets/:id' do
   @pet = Pet.find(params['id'])
   erb( :"pets/show" )

@@ -1,0 +1,44 @@
+<div class="headingsearchbar">
+<h1 class="petsheading"> Pets </h1>
+
+<form class="searchbar" action="/pets/search" method="GET">
+    <label for="search"></label>
+    <input class="searchbox" type= "text" name ="input" />
+    <input class="submit" type="submit" value="Search"/>
+</div>
+
+<div class="Filter">
+<a href="/pets">All</a>
+<a href="/pets/trained">Trained</a>
+<a href="/pets/untrained">Untrained</a>
+</div>
+
+
+  <% if @results == "Sorry there are no pets of that type or breed" %>
+  <div class = "searchfailcontainer">
+    <h2 class="searchfailed">Sorry, no pets were found!</h2>
+    <img class="searchfailed" src="/images/search.png" alt="">
+    <p class="searchfailed"> Looks like you were searching for a pet type or breed that doesn't exist. Please try again or return to main <a class="searchfailed" href="/pets">pets</a> page. </p>
+  </div>
+
+  <% else %>
+
+  <div class="allpets">
+
+    <% @results.each do |pet| %>
+    <div class="petdisplay">
+
+      <p class="petname"><a href="/pets/<%=pet.id%>"><%= pet.name %></a> <%= pet.date_arrived %> </p>
+      <div class="petimage">
+        <a href="/pets/<%=pet.id%>"><img src="/<%= pet.picture%>" alt=""></a>
+      </div>
+
+      <p class="viewpet"> <a href="/pets/<%=pet.id%>">View</a></p>
+
+
+    </div>
+
+    <% end %>
+    <% end %>
+
+  </div>

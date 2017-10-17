@@ -63,6 +63,7 @@ body{
   font-size: 16px;
   font-family: "Arial Rounded MT Bold";
   padding: 15px;
+  padding-top: 0;
   padding-left: 30px;
   text-decoration: none;
   justify-content: center;
@@ -72,6 +73,36 @@ body{
 a.active{
   color: #DA1C5C;
   font-weight: bolder;
+
+}
+
+.petsheading{
+  font-family: "Arial Rounded MT Bold";
+  color: #BFD040;
+  display: inline;
+}
+
+div.headingsearchbar{
+  width: 87%;
+  display: flex;
+  justify-content:space-between;
+  align-items: baseline;
+  padding-left: 2%;
+  padding-right:2%;
+}
+
+form.searchbar{
+  /*display:inline;*/
+
+}
+
+.searchbox {
+ height: 21px;
+ margin-right: -6px;
+}
+
+
+h1.searchbar {
 
 }
 
@@ -218,11 +249,31 @@ p.viewpet {
 
 }
 
-/*.deletepet input {
-  background:url(images/trash.png) no-repeat;
-  border: none;
-}*/
+img.searchfailed{
+  width: 20%;
+  height:20%;
+  display: block;
+  margin: auto;
 
-/*.showpetbuttons{
-  align-self: baseline;
-}*/
+
+}
+
+h2.searchfailed{
+  font-family: "Arial Rounded MT Bold";
+  color: #1D84B5;
+  text-align: center;
+}
+
+
+p.searchfailed{
+  display: block;
+  font-family: "Arial Rounded MT Bold";
+  color: #0A2239;
+  text-align: center;
+  width: 40%;
+  margin: auto;
+}
+
+a.searchfailed {
+  color: #DA1C5C;
+}
