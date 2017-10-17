@@ -79,25 +79,22 @@ class Pet
     end
   end
 
-  def self.find_type(type)
+  def self.search(input)
     sql = "SELECT * FROM pets WHERE type = $1;"
-    values = [type]
+    values = [input.downcase.capitalize]
     pets = SqlRunner.run(sql, values)
     if pets.any?
       return pets.map { |pet| Pet.new(pet)}
     else
-      return "No pets of that type"
+      sql = "SELECT * FROM pets WHERE breed = $1"
+      values = [input.downcase.capitalize]
+      pets = SqlRunner.run(sql, values)
+      if pets.any?
+        return pets.map { |pet| Pet.new(pet)}
+      else
+        return "Sorry there are no pets of that type or breed"
+      end
     end
-  end
 
-  def self.find_breed(breed)
-    sql = "SELECT * FROM pets WHERE breed = $1"
-    values = [breed]
-    pets = SqlRunner.run(sql, values)
-    if pets.any?
-      return pets.map { |pet| Pet.new(pet)}
-    else
-      return "No pets of that breed"
-    end
   end
 end
