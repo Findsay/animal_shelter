@@ -1,51 +1,66 @@
-<form action="/pets/<%= @pet.id%>" method="POST">
-  <label for="petName">Name:</label>
-  <input type="text" name ="name" value= "<%= @pet.name %>" id ="petName"/>
 
-  <label for="petBreed">Breed:</label>
-  <input type="text" name ="breed" value= "<%= @pet.breed %>"  id= "petBreed"/>
-
-  <label for="petSex">Sex:</label>
-  <select name="gender" id="petGender">
-    <%if @pet.gender == "Male" %>
-    <option value="Male"  selected >Male</option>
-    <option value="Female" >Female</option>
-    <%else%>
-    <option value="Male">Male</option>
-    <option value="Female" selected >Female</option>
-    <%end%>
-  </select>
+<div class="divnewform">
+  <h1>Edit Pet</h1>
 
 
-  <label for="petAdoptable">Adoptable:</label>
-  <select name="adoptable" id="petAdoptable">
-    <%if @pet.adoptable == "Yes" %>
-    <option value= "Yes" selected>Yes</option>
-    <option value="No"  >No</option>
-    <%else%>
-    <option value="Yes">Yes</option>
-    <option value="No" selected >No</option>
-    <%end%>
-  </select>
+  <form class="petform" action="/pets/<%= @pet.id%>" method="POST">
+    <div class="formcontent">
+      <label for="petName">Name:</label>
+      <input type="text" name ="name" value= "<%= @pet.name %>" id ="petName"/>
+    </div>
 
-  <label for="petTrained">Trained:</label>
-  <select name="trained" id="petTrained">
-    <%if @pet.trained == "Yes" %>
-    <option value="Yes" selected>Yes</option>
-    <option value="No"  >No</option>
-    <%else%>
-    <option value="Yes">Yes</option>
-    <option value="No" selected >No</option>
-    <%end%>
-  </select>
+    <div class="formcontent">
+      <label for="petBreed">Breed:</label>
+      <input type="text" name ="breed" value= "<%= @pet.breed %>"  id= "petBreed"/>
+    </div>
+
+    <div class="formcontent">
+      <label for="petSex">Sex:</label>
+      <select name="gender" id="petGender">
+        <%if @pet.gender == "Male" %>
+        <option value="Male"  selected >Male</option>
+        <option value="Female" >Female</option>
+        <%else%>
+        <option value="Male">Male</option>
+        <option value="Female" selected >Female</option>
+        <%end%>
+      </select>
+    </div>
+
+    <div class="formcontent">
+      <label for="petAdoptable">Adoptable:</label>
+      <select name="adoptable" id="petAdoptable">
+        <%if @pet.adoptable == "Yes" %>
+        <option value= "Yes" selected>Yes</option>
+        <option value="No"  >No</option>
+        <%else%>
+        <option value="Yes">Yes</option>
+        <option value="No" selected >No</option>
+        <%end%>
+      </select>
+    </div>
 
 
-  <input type="hidden" name ="date_arrived" value= "<%= @pet.date_arrived %>"/>
+    <div class="formcontent">
+      <label for="petTrained">Trained:</label>
+      <select name="trained" id="petTrained">
+        <%if @pet.trained == "Yes" %>
+        <option value="Yes" selected>Yes</option>
+        <option value="No"  >No</option>
+        <%else%>
+        <option value="Yes">Yes</option>
+        <option value="No" selected >No</option>
+        <%end%>
+      </select>
+    </div>
 
-  <input type="hidden" name ="type" value= "<%= @pet.type %>"/>
+    <input type="hidden" name ="date_arrived" value= "<%= @pet.date_arrived %>"/>
 
-  <input type="hidden" name ="picture" value= "<%= @pet.picture %>" />
+    <input type="hidden" name ="type" value= "<%= @pet.type %>"/>
 
-  <input type="submit" value="Submit Changes"/>
+    <input type="hidden" name ="picture" value= "<%= @pet.picture %>" />
 
-</form>
+    <input class="submit" type="submit" value="Submit Changes"/>
+
+  </form>
+</div>

@@ -1,4 +1,7 @@
 <h1 class="showpetheading"><%= @pet.name %></h1>
+<form class="deletepet" action="/pets/<%=@pet.id %>/delete" method="POST">
+  <input type="submit" value="Delete" />
+</form>
 
 <div class="showpetcontainer">
 
