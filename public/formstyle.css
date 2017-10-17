@@ -61,3 +61,19 @@ input.submit {
   font-size: 14px;
   padding: 5px;
 }
+
+.homediv {
+  display: block;
+  padding-left: 3%;
+}
+
+.homediv h1 {
+
+color: #BFD040;
+}
+
+span {
+color: #DA1C5C;
+font-weight: bold;
+padding-left: 2px;
+}

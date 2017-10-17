@@ -115,13 +115,13 @@ class Pet
   def self.adoption_percentage()
     total = Pet.count_all + 0.0
     adopted = PetOwner.count
-    return ((adopted/total)*100).round(1)
+    return ((adopted/total)*100).round
   end
 
   def self.pet_percentage(type)
     total = Pet.count_all + 0.0
     pet_type_total = Pet.count_type(type)
-    return ((pet_type_total/total)*100).round(1)
+    return ((pet_type_total/total)*100).round
   end
 
 

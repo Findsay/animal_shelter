@@ -64,10 +64,18 @@ class Owner
   def no_adopted()
     sql = "SELECT COUNT(*) FROM pet_owners WHERE owner_id= $1;"
     values =[@id]
-    return SqlRunner.run(sql, values)[0]['count']
+    return SqlRunner.run(sql, values)[0]['count'].to_i
   end
 
-
-
-
+  def self.avg_pets()
+    pets = []
+    owners = Owner.all
+    for owner in owners
+      if owner.no_adopted > 0
+        pets << owner.no_adopted
+      end
+    end
+    sum = (pets.sum)+0.0
+    return average = sum/pets.count
+  end
 end

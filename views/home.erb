@@ -1,8 +1,27 @@
+<div class= "homediv">
+
+<h1 class="homepagetitle">Shelter Stats</h1>
+
+<p>Total Registered Pets: <span> <%= Pet.count_all%> </span>  </p>
+<p>% of Pets Adopted : <span> <%= Pet.adoption_percentage %>%</span> </p>
+<br>
+<p>Total Registered Owners: <span><%= Owner.count %></span> </p>
+<p>Total Adopters: <span><%= PetOwner.unique_owners %></span></p>
+<p>Avg No.Pets per Adopter: <span><%= Owner.avg_pets.round(2) %></span> </p>
+
+</div>
+
 <dl>
   <dt>
     Regsistered Pets
+    <% dog = Pet.pet_percentage("Dog")%>
+    <% cat = Pet.pet_percentage("Cat")%>
+    <% rabbit = Pet.pet_percentage("Rabbit")%>
   </dt>
-  <dd class="percentage percentage-<%="><span class="text">Dogs: 11.33%</span></dd>
-  <dd class="percentage percentage-49"><span class="text">Cats: 49.77%</span></dd>
-  <dd class="percentage percentage-16"><span class="text">Rabbits: 16.09%</span></dd>
+  <dd class="percentage percentage-<%=dog%>">
+    <span class="text">Dogs: <%=dog%>%</span></dd>
+  <dd class="percentage percentage-<%=cat%>">
+    <span class="text">Cats: <%=cat%>%</span></dd>
+  <dd class="percentage percentage-<%=rabbit%>">
+    <span class="text">Rabbits: <%=rabbit%>%</span></dd>
 </dl>

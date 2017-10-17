@@ -57,7 +57,7 @@ dt {
 .percentage:after {
   content: "";
   display: block;
-  background-color: #3d9970;
+  background-color: #176087;
   width: 50px;
   margin-bottom: 10px;
   height: 90%;
@@ -475,6 +475,6 @@ dt {
 
 html, body {
   height: 500px;
-  font-family: "fira-sans-2",sans-serif;
-  color: #333;
+  font-family: "Arial Rounded MT Bold";
+  color: #0A2239;
 }
