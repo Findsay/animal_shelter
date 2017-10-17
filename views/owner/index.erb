@@ -1,5 +1,27 @@
-<h1>All Owners</h1>
 
-<% @owners.each do |owner| %>
-<p>Name: <%= owner.name %> </p>
-<%end%>
+<h1 class="tabletitle">All Owner Details</h1>
+
+<div class="tablediv">
+<table style="margin: auto;">
+  <tr>
+    <th>Name  </th>
+    <th>Email </th>
+    <th>Mobile </th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% for owner in @owners %>
+  <tr>
+    <td><%= owner.name %></td>
+    <td><%=owner.email%></td>
+    <td><%=owner.mobile%></td>
+    <td><form  action="/owners/<%=owner.id%>/edit" method="GET">
+      <input class="tablebuttonedit" type="submit" value="Edit" />
+    </form></td>
+    <td><form  action="/owners/<%=owner.id%>/delete" method="POST">
+      <input class="tablebutton" type="submit" value="Delete" />
+    </form></td>
+  </tr>
+  <% end %>
+</table>
+</div>

@@ -10,27 +10,37 @@ Pet.delete_all()
 Owner.delete_all()
 
 owner1 = Owner.new({
-    'name' => "Gerald"
+    'name' => "Gerald",
+    'email' => "gerald@gmail.com",
+    'mobile' => "07711223344"
 })
 owner1.save()
 
 owner2 = Owner.new({
-    'name' => "Helen"
+    'name' => "Helen",
+    'email' => "helen@gmail.com",
+    'mobile' => "07722334455"
 })
 owner2.save()
 
 owner3 = Owner.new({
-    'name' => "Jean"
+    'name' => "Jean",
+    'email' => "jean@gmail.com",
+    'mobile' => "07733557788"
 })
 owner3.save()
 
 owner4 = Owner.new({
-    'name' => "Lisa"
+    'name' => "Lisa",
+    'email' => "lisa@gmail.com",
+    'mobile' => "07734597688"
 })
 owner4.save()
 
 owner5 = Owner.new({
-    'name' => "Grant"
+    'name' => "Grant",
+    'email' => "grant@gmail.com",
+    'mobile' => "07734697691"
 })
 owner5.save()
 

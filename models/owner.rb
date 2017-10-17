@@ -3,19 +3,21 @@ require_relative "pet"
 
 class Owner
 
-  attr_accessor :name
+  attr_accessor :name, :email, :mobile
   attr_reader :id
 
 
   def initialize(options)
     @id = options['id'] if options['id']
     @name = options['name']
+    @email = options['email']
+    @mobile = options ['mobile']
   end
 
 
   def save()
-    sql = "INSERT INTO owners (name) VALUES ($1) RETURNING id;"
-    values = [@name]
+    sql = "INSERT INTO owners (name, email, mobile) VALUES ($1, $2, $3) RETURNING id;"
+    values = [@name, @email, @mobile]
     @id = SqlRunner.run(sql, values).first['id'].to_i
   end
 
@@ -26,8 +28,8 @@ class Owner
   end
 
   def update()
-    sql = 'UPDATE owners SET (name) = ($1) WHERE id = $2;'
-    values = [@name, @id]
+    sql = 'UPDATE owners SET (name, email, mobile) = ($1, $2, $3) WHERE id = $4;'
+    values = [@name, @email, @mobile, @id]
     SqlRunner.run(sql, values)
   end
 

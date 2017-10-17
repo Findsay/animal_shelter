@@ -1,0 +1,25 @@
+<div class="divnewform">
+  <h1>Edit Owner</h1>
+
+  <form class="petform" action="/owners/<%=@owner.id%>" method="POST">
+    <div class="formcontent">
+      <label for="ownerName">Name:</label>
+      <input type="text" name ="name" value= "<%= @owner.name %>" id ="ownerName"/>
+    </div>
+
+    <div class="formcontent">
+      <label for="ownerEmail">Email:</label>
+      <input type="text" name ="email" value= "<%= @owner.email %>"  id= "ownerEmail"/>
+    </div>
+
+    <div class="formcontent">
+      <label for="ownerMobile">Mobile:</label>
+      <input type="text" name ="mobile" value= "<%= @owner.mobile %>"  id= "ownerMobile"/>
+    </div>
+
+
+
+    <input class="submit" type="submit" value="Submit Changes"/>
+
+  </form>
+</div>
