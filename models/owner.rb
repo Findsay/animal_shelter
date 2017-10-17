@@ -44,11 +44,14 @@ class Owner
     return owners.map { |owner| Owner.new(owner) }
   end
 
-  def pets
-    sql = "SELECT * FROM pets WHERE current_owner = $1"
-    values = [@id]
-    pets = SqlRunner.run(sql, values)
-    return pets.map { |pet| Pet.new(pet)}
+
+  def self.find(id)
+    sql = 'SELECT * FROM owners WHERE id = $1;'
+    values = [id]
+    owner = SqlRunner.run(sql,values).first
+    return Owner.new(owner)
   end
+
+
 
 end

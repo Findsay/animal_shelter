@@ -12,20 +12,27 @@ Owner.delete_all()
 owner1 = Owner.new({
     'name' => "Gerald"
 })
-
 owner1.save()
 
 owner2 = Owner.new({
     'name' => "Helen"
 })
-
 owner2.save()
 
 owner3 = Owner.new({
     'name' => "Jean"
 })
-
 owner3.save()
+
+owner4 = Owner.new({
+    'name' => "Lisa"
+})
+owner4.save()
+
+owner5 = Owner.new({
+    'name' => "Grant"
+})
+owner5.save()
 
 
 pet1 = Pet.new({
@@ -229,18 +236,32 @@ petowner1 = PetOwner.new({
     'owner_id' => owner1.id,
     'pet_id' => pet1.id
 })
-
 petowner1.save()
-#
-# petowner2 = PetOwner.new({
-#     'owner_id' => owner1.id,
-#     'pet_id' => pet3.id
-# })
-#
-# petowner2.save()
 
+petowner2 = PetOwner.new({
+    'owner_id' => owner1.id,
+    'pet_id' => pet8.id
+})
 
+petowner2.save()
 
+petowner3 = PetOwner.new({
+    'owner_id' => owner4.id,
+    'pet_id' => pet4.id
+})
+petowner3.save()
+
+petowner4 = PetOwner.new({
+    'owner_id' => owner5.id,
+    'pet_id' => pet3.id
+})
+petowner4.save()
+
+petowner5 = PetOwner.new({
+    'owner_id' => owner5.id,
+    'pet_id' => pet7.id
+})
+petowner5.save()
 
 binding.pry
 nil

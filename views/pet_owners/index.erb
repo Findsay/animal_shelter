@@ -1,16 +1,19 @@
-<h1>Owners and their pets</h1>
 
-<% @petowners.each do |petowner| %>
-<h2><%= petowner.owner.name %></h2>
-<h3>Pets Owned</h3>
-<ol>
-<% pets = petowner.pet%>
-<% pets.each do |pet| %>
-<li><a href="/pets/<%=pet.id%>"><%= pet.name %> <%=- pet.breed %></a></li>
-<form action="/pet_owners/<%= petowner.id %>/delete" method="POST">
-  <input type="submit" value="Delete" />
-</form>
-<% end %>
-</ol>
+<h1>Adoptions</h1>
 
-<% end %>
+<table>
+  <tr>
+    <th>Pet  </th>
+    <th>Owner </th>
+    <th></th>
+  </tr>
+  <% for petowner in @petowners %>
+  <tr>
+    <td><%=Pet.find(petowner.pet_id).name %></td>
+    <td><%=Owner.find(petowner.owner_id).name%></td>
+    <td><form class="deleteadoption" action="/pet_owners/<%=petowner.id%>/delete" method="POST">
+      <input type="submit" value="Delete" />
+    </form></td>
+  </tr>
+  <% end %>
+</table>
