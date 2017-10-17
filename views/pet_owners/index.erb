@@ -1,7 +1,8 @@
 
-<h1>Adoptions</h1>
+<h1 class="tabletitle">Adoptions</h1>
 
-<table>
+<div class="tablediv">
+<table style="margin: auto;">
   <tr>
     <th>Pet  </th>
     <th>Owner </th>
@@ -9,11 +10,12 @@
   </tr>
   <% for petowner in @petowners %>
   <tr>
-    <td><%=Pet.find(petowner.pet_id).name %></td>
+    <td><a href="/pets/<%=Pet.find(petowner.pet_id).id%>"><%=Pet.find(petowner.pet_id).name%></a></td>
     <td><%=Owner.find(petowner.owner_id).name%></td>
-    <td><form class="deleteadoption" action="/pet_owners/<%=petowner.id%>/delete" method="POST">
-      <input type="submit" value="Delete" />
+    <td><form  action="/pet_owners/<%=petowner.id%>/delete" method="POST">
+      <input class="tablebutton" type="submit" value="Delete" />
     </form></td>
   </tr>
   <% end %>
 </table>
+</div>
