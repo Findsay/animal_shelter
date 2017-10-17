@@ -1,5 +1,6 @@
 require_relative "../db/sql_runner"
 require_relative "owner"
+require_relative "pet_owner"
 
 class Pet
 
@@ -102,13 +103,25 @@ class Pet
   def self.count_all()
     sql = "SELECT COUNT (*) FROM pets;"
     values =[]
-    return SqlRunner.run(sql, values)[0]['count']
+    return SqlRunner.run(sql, values)[0]['count'].to_i()
   end
 
   def self.count_type(type)
     sql = "SELECT COUNT(*) FROM pets WHERE type= $1;"
-    values =[type]
-    return SqlRunner.run(sql, values)[0]['count']
+    values =[type.downcase.capitalize]
+    return SqlRunner.run(sql, values)[0]['count'].to_i()
+  end
+
+  def self.adoption_percentage()
+    total = Pet.count_all + 0.0
+    adopted = PetOwner.count
+    return ((adopted/total)*100).round(1)
+  end
+
+  def self.pet_percentage(type)
+    total = Pet.count_all + 0.0
+    pet_type_total = Pet.count_type(type)
+    return ((pet_type_total/total)*100).round(1)
   end
 
 

@@ -6,5 +6,5 @@ require_relative('pets_owner_controller')
 
 
 get '/' do
-  erb( :index )
+  erb( :home )
 end

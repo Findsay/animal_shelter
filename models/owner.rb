@@ -54,6 +54,20 @@ class Owner
     return Owner.new(owner)
   end
 
+  def self.count()
+    sql = "SELECT COUNT (*) FROM owners;"
+    values =[]
+    return SqlRunner.run(sql, values)[0]['count']
+  end
+
+
+  def no_adopted()
+    sql = "SELECT COUNT(*) FROM pet_owners WHERE owner_id= $1;"
+    values =[@id]
+    return SqlRunner.run(sql, values)[0]['count']
+  end
+
+
 
 
 end

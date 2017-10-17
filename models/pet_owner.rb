@@ -57,14 +57,16 @@ class PetOwner
   def self.count()
     sql = "SELECT COUNT (*) FROM pet_owners;"
     values =[]
-    return SqlRunner.run(sql, values)[0]['count']
+    return SqlRunner.run(sql, values)[0]['count'].to_i()
   end
 
   def self.unique_owners()
     sql = "SELECT COUNT (DISTINCT owner_id) FROM pet_owners;"
     values =[]
-    return SqlRunner.run(sql, values)[0]['count']
+    return SqlRunner.run(sql, values)[0]['count'].to_i()
   end
+
+
 
 
 
