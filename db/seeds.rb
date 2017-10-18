@@ -54,7 +54,6 @@ pet1 = Pet.new({
   'adoptable' => "Yes",
   'trained' => "No",
   'picture' =>"images/buddy.jpg"
-
 })
 
 pet1.save()
@@ -68,8 +67,6 @@ pet2 = Pet.new({
     'adoptable' => "No",
     'trained' => "No",
     'picture' =>"images/rolo.jpg"
-
-
 })
 
 pet2.save()
@@ -239,8 +236,8 @@ pet15 = Pet.new({
     'trained' => "No",
     'picture' =>"images/alfie.jpg"
 })
-pet15.save()
 
+pet15.save()
 
 petowner1 = PetOwner.new({
     'owner_id' => owner1.id,

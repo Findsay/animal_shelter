@@ -93,7 +93,14 @@ class Pet
       if pets.any?
         return pets.map { |pet| Pet.new(pet)}
       else
+        sql = "SELECT * FROM pets WHERE name = $1"
+        values = [input.downcase.capitalize]
+        pets = SqlRunner.run(sql, values)
+        if pets.any?
+          return pets.map { |pet| Pet.new(pet)}
+        else
         return "Sorry there are no pets of that type or breed"
+      end
       end
 
     end

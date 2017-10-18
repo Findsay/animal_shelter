@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS owners;
 
 CREATE TABLE owners (
   id SERIAL8 PRIMARY KEY,
-  name VARCHAR(255),
+  name VARCHAR(255) NOT NULL,
   email VARCHAR(255),
   mobile VARCHAR(255)
 );
@@ -26,5 +26,5 @@ CREATE TABLE pets (
 CREATE TABLE pet_owners (
   id SERIAL8 PRIMARY KEY,
   owner_id INT8 REFERENCES owners(id) ON DELETE CASCADE ,
-  pet_id INT8 REFERENCES pets(id) ON DELETE CASCADE 
+  pet_id INT8 REFERENCES pets(id) ON DELETE CASCADE
 );
