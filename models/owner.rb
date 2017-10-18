@@ -57,7 +57,7 @@ class Owner
   def self.count()
     sql = "SELECT COUNT (*) FROM owners;"
     values =[]
-    return SqlRunner.run(sql, values)[0]['count']
+    return SqlRunner.run(sql, values)[0]['count'].to_i
   end
 
 
