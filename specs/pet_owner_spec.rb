@@ -17,4 +17,9 @@ class PetTest < MiniTest::Test
     actual = PetOwner.count()
     assert_equal(expected, actual)
   end
+
+  def test_unique_owners()
+    assert_equal(3, PetOwner.unique_owners)
+  end
+
 end
