@@ -76,6 +76,6 @@ class Owner
       end
     end
     sum = (pets.sum)+0.0
-    return average = sum/pets.count
+    return sum/pets.count
   end
 end
